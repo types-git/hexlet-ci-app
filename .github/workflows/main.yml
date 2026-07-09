@@ -1,0 +1,13 @@
+name: Github Actions
+on: push
+
+jobs:
+  build: 
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: npm install
+      - run: npm setup
+      - run: npm run lint
+      - name: run tests
+        run: npm test 
