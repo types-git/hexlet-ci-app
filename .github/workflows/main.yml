@@ -2,11 +2,15 @@ name: Github Actions
 on: push
 
 jobs:
-  build: 
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - run: npm setup
-      - run: npm run lint
-      - name: run tests
-        run: npm test 
+      - name: Setup
+        run: make install
+
+      - name: Test
+        run: make test
+
+      - name: Lint
+        run: make lint
